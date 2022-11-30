@@ -1,60 +1,132 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Tela de Cadastro</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <title>CodePen - Tela de Cadastro</title>
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
+<h1>Fatec</h1>
+<h2>Formulário de cadastro</h2>
+
 <div class='container'>
-  <div class='card'>
-    <h1> Cadastrar </h1>
-    
-    <div id='msgError'></div>
-    <div id='msgSuccess'></div>
-    
-            <div class="label-float">
-               <input type="text" id="nome" placeholder=" " required>
-               <label id="labelNome" for="nome">Nome</label>
-            </div>
+    <div class='card'>
+        <h1> Cadastrar </h1>
 
-            <div class="label-float">
-               <input type="text" id="usuario" placeholder=" " required>
-               <label id="labelUsuario" for="usuario">Usuário</label>
-            </div>
-            
-            <div class="label-float">
-               <input type="password" id="senha" placeholder=" " required>
-               <label id="labelSenha" for="senha">Senha</label>
-               <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
-               
-            </div>
+        <div id='msgError'></div>
+        <div id='msgSuccess'></div>
 
-            <div class="label-float">
-               <input type="password" id="confirmSenha" placeholder=" " required>
-               <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
-               <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
-            </div>
-            
-            <div class='justify-center'>
-               <button onclick='cadastrar()'>Cadastrar</button>
-            </div>
+        <div class="label-float">
+            <input type="text" id="nome" placeholder=" " required>
+            <label id="labelNome" for="nome">Nome</label>
+        </div>
 
-    
-  </div>
-  </div>
+        <div class="label-float">
+            <fildset>
+                <legend>Sexo:</legend>
+                <input type="radio" name="tsexo"
+                       id="cMasc"> Masculino<br>
+                <input type="radio" name="tsexo"
+                       id="cFem" checked> Feminino
+           </fildset>
+            <label id="labelSexo" for="sexo">Sexo</label>
+        </div>
+
+        <div class="label-float">
+            </fildset>
+            <p>Data de Nascimento:</p><input type="date" name="tData" id="cData">
+            </fildset>
+            <label id="labelNascto" for="nascto">Data Nascimento</label>
+        </div>
+
+        <div class="label-float">
+
+            <fildset id="endereço">
+                <legend>Endereço</legend>
+
+                <p> Logradouro: <input type="text" name="tLog" id="cLog" size="40" maxlength="80" placeholder="Rua"> </p>
+                <p>Número:<input type="number" name="tNum" id="cNum" min="0" max="99999"> </p>
+                <p>Estado: <select name="tEstado" id="cEstado"
+                    < optgroup label="Região Sudeste">
+                    <option value=" "> <selected> São Paulo</selected></option>
+                    <option value=" "> Rio de Janeiro</option>
+                    <option value=" "> Minas Gerais </option>
+                    </optgroup>
+
+                    <optgroup label="Região Sul">
+                        <option value="">Paraná</option>
+                        <option value=""> Santa Catarina</option>
+                        <option value="" >Rio Grande do Sul</option>
+                    </optgroup>
+                    <select/> </p>
+
+                <p>Cidade:<input type="text" name="tCidade" id="cCidade" size="20" maxlength="20" placeholder=" Sua Cidade" list="cidades"></p>
+                <datalist id="cidades">
+                    <option value="Assis"></option>
+                    <option value="Cândido Mota"></option>
+                    <option value="Palmital"></option>
+                    <option value="Tarumã"></option>
+                </datalist>
+                </fieldset>
+
+            <label id="labelEndereco" for="endereco">Endereço</label>
+        </div>
+
+        <div class="label-float">
+            <fieldset>
+                <p>Urgência: <input type="range" name="tUrg" id="cUrg"
+                                            min="0" max="3" step="1"></p>
+
+        </div>
+
+        <div class="label-float">
+
+                <p>Mensagem: <textarea name="tMsg" id="xMsg" cols="40" rows="10" placeholder="Deixe aqui sua mensagem"></textarea></p>
+            </fieldset>
+
+            <label id="labelNome" for="nome">Mensagem</label>
+        </div>
+
+        <div class="label-float">
+            <input type="text" id="usuario" placeholder=" " required>
+            <label id="labelUsuario" for="usuario">Usuário</label>
+        </div>
+
+        <div class="label-float">
+            <input type="password" id="senha" placeholder=" " required>
+            <label id="labelSenha" for="senha">Senha</label>
+            <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+
+        </div>
+
+        <div class="label-float">
+            <input type="password" id="confirmSenha" placeholder=" " required>
+            <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
+            <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
+        </div>
+
+        <div class='justify-center'>
+            <button onclick='cadastrar()'>Cadastrar</button>
+        </div>
+
+    </div>
+</div>
 </body>
 <!-- partial -->
-  <script  src="./script.js"></script>
+<script  src="./script.js"></script>
 
 </body>
-</html>
 
+<footer id="rodape">
+    <p>Copyright &copy; by Fatec <br>
+        <a href="http:\\fatecsp.br" target="_blank">fatec</a> 2022</p>
+</footer>
+</html>

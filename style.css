@@ -34,6 +34,16 @@ h1{
   margin-bottom: 20px;
   color: #0d009c
 }
+h2{
+  text-align: center;
+  margin-bottom: 16px;
+  color: #0d009c
+}
+footer{
+  text-align: center;
+  margin-bottom: 12px;
+  color: #6ca0df
+}
 
 .label-float input{
   width: 100%;
