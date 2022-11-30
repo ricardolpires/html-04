@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Agua Nova</title>
+
+
+</head>
+
+
+
+<body>
+
+<script>
+  function CalcTotal(){
+    var qtde=parseInt(document.getElementById ('cQtde').value);
+    tot=qtde*10;
+    document.getElementById('ctot').value =tot;
+  }
+</script>
+
+<div id="interface" >
+  <header id="cabecalho">
+    <hgroup>
+      <h1>Caipirinha Agua Nova</h1>
+      <h2>Um novo sabor está chegando</h2>
+    </hgroup>
+    <img id="icone" src="imagens/caipirinhaIndex.png" alt="Drink">
+    <nav id="menu">
+      <H1>Menu principal</H1>
+      <ul>
+        <li onmouseover="mudaFoto('imagens/home.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="index.html">Home</a></li>
+
+        <li onmouseover="mudaFoto('imagens/empresa.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="empresa.html">Empresa</a></li>
+
+        <li onmouseover="mudaFoto('imagens/curiosidades.png')" onmouseout="mudaFoto('imagens/contatopng')"><a href="curiosidades.html">Curiosidades</a></li>
+
+        <li onmouseover="mudaFoto('imagens/produto.png')" onmouseout="mudaFoto('imagens/contato.png')" ><a href="produto.html">Caipirinha</a></li>
+
+        <li onmouseover="mudaFoto('imagens/Fotos.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+
+        <li onmouseover="mudaFoto('imagens/contato.png')" onmouseout="mudaFoto('imagens/contato.png')"><a href="contato.html">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form method="post" id="fContato" action="mailto:deborajakson@gmail.com" oninput="CalcTotal();"></form>
+  <section id="corpo">
+    <article id="principal">
+
+      <header id="cabecalhoArtigo">
+        <h3>Fatec Realiza > Praça da Catedral</h3>
+        <h1>Saíba tudo sobre o evento</h1>
+        <h2>By Alunos Fatec</h2>
+        <h3>Atualizado em outubro/2022</h3>
+      </header>
+      <form action="">
+
+        <fildset>
+          <legend>Identificação do Usuário</legend>
+          <p>Nome:</p> <input type="text"  id="cNome" name="tnome" size="20" maxlength="20" placeholder="nome completo ">
+          <p>Senha:</p><input type="password" id="cSenha" name="tSenha" size="8" maxlength="8" placeholder="8 digitos">
+          <p>E-mail:</p><input type="email" name="tmail" id="Cmail" size="40" maxlength="40" placeholder="digite um e-mail valido ">
+          <fildset>
+            <legend>Sexo:</legend>
+            <input type="radio" name="tsexo"
+                   id="cMasc">    -Masculino<br>
+            <input type="radio" name="tsexo"
+                   id="cFem" checked>   Feminino
+
+
+          </fildset>
+          <p>Data de Nascimento:</p><input type="date" name="tData" id="cData">
+        </fildset>
+
+
+        <fildset id="endereço">
+
+          <legend>Endereço do Usuário</legend>
+
+          <p> Logradouro: <input type="text" name="tLog" id="cLog" size="40" maxlength="80" placeholder="Rua, Avenida, Alameda, etc..."> </p>
+          <p>Número:<input type="number" name="tNum" id="cNum" min="0" max="99999"> </p>
+          <p>Estado: <select name="tEstado" id="cEstado"
+            < optgroup label="Região Sudeste">
+            <option value=" "> <selected> São Paulo</selected></option>
+            <option value=" "> Rio de Janeiro</option>
+            <option value=" "> Minas Gerais </option>
+            </optgroup>
+            <optgroup label="Região Sul">
+              <option value="">Paraná</option>
+              <option value=""> Santa Catarina</option>
+              <option value="" >Rio Grande do Sul</option>
+            </optgroup>
+            <select/> </p>
+          <p>Cidade:<input type="text" name="tCidade" id="cCidade" size="20" maxlength="20" placeholder=" Sua Cidade" list="cidades"></p>
+          <datalist id="cidades">
+            <option value="São Paulo"></option>
+            <option value="Campinas"></option>
+            <option value="Assis"></option>
+            <option value="Tarumã"></option>
+          </datalist>
+          </fieldset>
+
+
+          Mensagem do Usuário
+
+          <fieldset>
+            <p>Grau de Urgência: <input type="range" name="tUrg" id="cUrg"
+                                        min="0" max="10" step="2"></p>
+
+            <p>Mensagem: <textarea name="tMsg" id="xMsg" cols="40" rows="10" placeholder="Deixe aqui sua mensagem"></textarea></p>
+          </fieldset>
+
+
+          <fildset>
+
+            <legend>Reservas</legend>
+
+            <p> <input type="checkbox" name="tPedido" id="cPedido"checked> <label for="cPed"> Gostaria de adquirir reservar o produto</label></p>
+
+
+            <p><label for="cQtde"> Quantidade:</label><input type="number" name="tQtde" id="cQtde" min="0" max="10" value="0"></p>
+
+            <p><label for="cTot">  Preço Total: R$</label>
+              <input type="text" name="cTot" id="cTot" placeholder="Total a pagar"realonge></p>
+          </fildset>
+
+          [BOTÃO ENVIAR]
+          <input type="imagem" name="tEnviar" id="cEnviar" src="imagens/botao-enviar.png">
+      </form>
+
+      <footer id="rodape">
+        <p>Copyright &copy;2022 -by Agua Nova <br>
+          <a href="http:\\facebook.com.br" target="_blank">facebook</a> | twitter</p>
+      </footer>
+          </div>
